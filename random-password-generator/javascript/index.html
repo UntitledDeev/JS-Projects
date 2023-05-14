@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Password Generator | JS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="shadow-md fixed bg-gray-100 w-[140px] h-[140px] flex items-end justify-center rotate-[45deg] -top-[70px] -right-[70px] pb-3"
+    >
+      <a href="https://www.github.com/ebraj" target="_blank">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+          />
+        </svg>
+      </a>
+    </div>
+    <div
+      class="px-5 w-full min-h-[100vh] bg-gradient-to-tr from-yellow-500 to-orange-600 flex items-center justify-center"
+    >
+      <div
+        class="bg-white p-5 rounded-xl space-y-5 max-w-[400px] w-[100%] md:w-[450px] shadow-md"
+      >
+        <!-- Password -->
+        <div class="flex items-center justify-center gap-[5px]">
+          <p
+            id="passwordBox"
+            class="px-5 py-3 bg-gray-100 w-full rounded-md"
+          ></p>
+          <div
+            id="copyToClipboard"
+            class="px-2 bg-gray-100 py-3 rounded-md cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <!-- Length of the password -->
+          <div class="flex justify-between">
+            <label for="length">Length of the password</label>
+            <input
+              type="number"
+              id="length"
+              min="6"
+              max="20"
+              value="8"
+              class="bg-gray-100 px-2 text-center rounded-md py-1"
+            />
+          </div>
+
+          <!-- Include Uppercase -->
+          <div class="flex justify-between">
+            <label for="upperCase">Uppercase</label>
+            <input type="checkbox" id="upperCase" checked />
+          </div>
+          <!-- Include LowerCase -->
+          <div class="flex justify-between">
+            <label for="lowerCase">Lowercase</label>
+            <input type="checkbox" id="lowerCase" checked />
+          </div>
+          <!-- Include Numbers -->
+          <div class="flex justify-between">
+            <label for="number">Number</label>
+            <input type="checkbox" id="number" checked />
+          </div>
+          <!-- Include LowerCase -->
+          <div class="flex justify-between">
+            <label for="symbol">Symbol</label>
+            <input type="checkbox" id="symbol" checked />
+          </div>
+        </div>
+
+        <button
+          id="generateBtn"
+          class="bg-gray-900 w-full px-5 py-3 rounded-md text-gray-100 font-bold hover:bg-black hover:scale-[102%] transition-all"
+        >
+          Generate Password
+        </button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
