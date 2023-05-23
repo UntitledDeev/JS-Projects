@@ -5,6 +5,7 @@ const lightBoxContainer = document.querySelector("#lightbox-container");
 const showSelectedImage = document.querySelector("#show-selected-image");
 const previousButton = document.querySelector("#prev-button");
 const nextButton = document.querySelector("#next-button");
+const downloadButton = document.querySelector("#download-button");
 
 closeBtn.addEventListener("click", (e) => {
   lightBoxContainer.classList.add("hidden");
@@ -34,5 +35,24 @@ allInnerImages.forEach((singleImg, index) => {
         showSelectedImage.src = allInnerImages[selectedIndex].src;
       }
     });
+    downloadButton.addEventListener("click", () => {
+      downloadImage(singleImg.src, singleImg.getAttribute("src"));
+    });
   });
 });
+
+/**
+ * Image download functionality...
+ */
+async function downloadImage(imgSrc, imageName) {
+  const response = await fetch(imgSrc);
+  const blobImage = await response.blob();
+  const href = URL.createObjectURL(blobImage);
+  const anchorElement = document.createElement("a");
+  anchorElement.href = href;
+  anchorElement.download = imageName;
+  document.body.appendChild(anchorElement);
+  anchorElement.click();
+  document.body.removeChild(anchorElement);
+  window.URL.revokeObjectURL(href);
+}

@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
       .image-container .inner-image {
-        @apply cursor-pointer;
+        @apply cursor-pointer rounded-md;
       }
       svg {
         @apply cursor-pointer hover:scale-[1.25] transition-all;
@@ -21,12 +21,12 @@
   <body>
     <!-- Lightbox -->
     <div
-      class="overflow-auto fixed top-0 left-0 w-full h-screen bg-gray-900/95 flex items-center justify-center flex-col hidden"
+      class="overflow-auto fixed top-0 left-0 w-full min-h-screen bg-gray-900/95 flex items-center justify-center flex-col hidden"
       id="lightbox-container"
     >
       <div class="flex items-center justify-center space-x-5 py-5">
-        <!-- Download -->
-        <div class="">
+        <!-- Download Button-->
+        <div class="" id="download-button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -43,7 +43,7 @@
           </svg>
         </div>
 
-        <!-- Close -->
+        <!-- Close Button-->
         <div id="close-btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +62,7 @@
         </div>
       </div>
       <div class="flex items-center w-full">
+        <!-- Left Button -->
         <div class="pl-5 md:pl-10 select-none" id="prev-button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,6 +79,7 @@
             />
           </svg>
         </div>
+        <!-- Lightbox Image -->
         <div
           class="w-full mx-auto flex items-center justify-center"
           id="lightbox-image-box"
@@ -89,6 +91,7 @@
             id="show-selected-image"
           />
         </div>
+        <!-- Right Button -->
         <div class="pr-5 md:pr-10 select-none" id="next-button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -109,21 +112,27 @@
     </div>
 
     <!-- Image Gallery -->
+
     <div
-      class="w-full min-h-[100vh] flex items-center justify-center py-[5rem] px-5"
+      class="w-full min-h-[100vh] flex items-center justify-center py-[5rem] px-5 flex-col w-full"
     >
+      <h1
+        class="text-center font-black mb-10 border-b-4 border-orange-500 text-2xl"
+      >
+        Image Gallery With Lightbox.
+      </h1>
       <div
-        class="image-container gap-5 rounded-xl w-[100%] max-w-[1000px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-auto"
+        class="image-container rounded-xl w-[100%] max-w-[1000px] sm:columns-2 md:columns-3 gap-5 space-y-5"
       >
         <img src="./images/bridge.jpg" class="inner-image" alt="" />
-        <img src="./images/camera.jpg" class="inner-image" alt="" />
         <img src="./images/cassette.jpg" class="inner-image" alt="" />
+        <img src="./images/standing.jpg" class="inner-image" alt="" />
+        <img src="./images/woman-cat.jpg" class="inner-image" alt="" />
+        <img src="./images/wheel.jpg" class="inner-image" alt="" />
+        <img src="./images/camera.jpg" class="inner-image" alt="" />
         <img src="./images/empire.jpg" class="inner-image" alt="" />
         <img src="./images/leaf.jpg" class="inner-image" alt="" />
         <img src="./images/rock.jpg" class="inner-image" alt="" />
-        <img src="./images/standing.jpg" class="inner-image" alt="" />
-        <img src="./images/wheel.jpg" class="inner-image" alt="" />
-        <img src="./images/woman-cat.jpg" class="inner-image" alt="" />
       </div>
     </div>
 
