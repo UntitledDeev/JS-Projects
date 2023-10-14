@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untitled Dev | Contact Form #01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <style type="text/tailwindcss"></style>
+  </head>
+
+  <body
+    class="max-w-[100vw] overflow-x-hidden min-h-screen relative flex items-center justify-center text-[17.5px] p-5"
+  >
+    <div
+      aria-hidden="true"
+      class="absolute inset-0 top-0 left-0 opacity-100 -z-10"
+    >
+      <div
+        class="h-60 bg-gradient-to-br from-sky-400 to-green-600 blur-[200px] rotate-[-20deg]"
+      ></div>
+      <div
+        class="h-60 bg-gradient-to-r from-sky-500 to-green-500 blur-[200px] rotate-[20deg]"
+      ></div>
+    </div>
+
+    <main
+      class="w-full grid grid-cols-1 md:grid-cols-2 items-center max-w-[1000px] mx-auto bg-white py-16 px-5 sm:px-10 rounded-2xl shadow-sm gap-8"
+    >
+      <div class="space-y-5">
+        <img src="./images/communication.svg" alt="Untitled Dev" />
+      </div>
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-bold text-center">
+          Hello Hustlers 👋
+        </h1>
+
+        <form class="py-6 space-y-4" id="form">
+          <div class="space-y-2">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              name="fullName"
+              id="fullName"
+              class="outline-none w-full p-2 px-4 rounded-lg ring-1 ring-green-300"
+              placeholder="Full Name"
+              autocomplete="off"
+            />
+            <span class="inline-block text-red-500 custom-error hidden"></span>
+          </div>
+          <div class="space-y-2">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="outline-none w-full p-2 px-4 rounded-lg ring-1 ring-green-300"
+              placeholder="Email"
+              autocomplete="off"
+            />
+            <span class="inline-block text-red-500 custom-error hidden"></span>
+          </div>
+          <div class="space-y-2">
+            <label for="messages">Drop your messages 📨</label>
+            <textarea
+              name="messages"
+              class="outline-none w-full p-2 px-4 rounded-lg ring-1 ring-green-300"
+              placeholder="Any messages"
+              id="message"
+            ></textarea>
+            <span class="text-red-500 inline-block custom-error hidden"></span>
+          </div>
+          <input
+            type="submit"
+            value="Submit 👻"
+            class="bg-green-600 w-full rounded-lg py-3 px-5 font-bold text-white text-xl disabled:opacity-60"
+            id="submitBtn"
+          />
+        </form>
+      </div>
+    </main>
+    <footer
+      class="fixed bottom-0 left-0 right-0 w-full text-center bg-green-950 py-1.5 text-sm text-green-400"
+    >
+      Built using HTML, CSS, TailwindCSS & JS.
+      <a
+        href="https://www.instagram.com/untitleddev25/"
+        target="_blank"
+        class="font-bold text-white underline"
+        >Untitled Dev 👻</a
+      >.
+    </footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
